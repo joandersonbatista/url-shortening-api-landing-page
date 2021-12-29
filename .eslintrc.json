@@ -21,6 +21,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks"],
   "rules": {
+    "import/prefer-default-export": "off",
     "eol-last": "off",
     "no-console": "off",
     "react/jsx-filename-extension": [
