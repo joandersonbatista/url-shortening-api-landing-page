@@ -4,40 +4,52 @@ import "./header.css";
 import LogoSVG from "../images/logo.svg";
 
 export default function Header() {
+  const [open, setOpen] = React.useState(false);
+
+  document.getElementsByTagName("html")[0].style.overflow = open
+    ? "hidden"
+    : "initial";
+
   return (
-    <header className="header main-content">
-      <img src={LogoSVG} alt="logo-site" />
-      <nav>
-        <ul>
-          <li>
-            <a href="#features" className="button_nav">
-              Features
-            </a>
-          </li>
-          <li>
-            <a href="#Pricing" className="button_nav">
-              Pricing
-            </a>
-          </li>
-          <li>
-            <a href="#Resources" className="button_nav">
-              Resources
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#features" className="button_nav">
-              Login
-            </a>
-          </li>
-          <li>
-            <a href="#Pricing" className="sign-button">
-              Sign Up
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div className="main-content">
+      <header className="header">
+        <img src={LogoSVG} alt="logo-site" />
+        <a className="menu-toggle" onClick={() => setOpen(!open)} href="#s">
+          <div className="qual-foi" />
+          <div className="qual-foi" />
+          <div className="qual-foi" />
+        </a>
+        <nav className={!open ? "drop-dow" : ""}>
+          <ul>
+            <li>
+              <a href="#features" className="button_nav">
+                Features
+              </a>
+            </li>
+            <li>
+              <a href="#Pricing" className="button_nav">
+                Pricing
+              </a>
+            </li>
+            <li>
+              <a href="#Resources" className="button_nav">
+                Resources
+              </a>
+            </li>
+          </ul>
+          <div className="line" />
+          <ul>
+            <li>
+              <a href="#features" className="button_nav">
+                Login
+              </a>
+            </li>
+            <li>
+              <button type="button">Sign Up</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
   );
 }

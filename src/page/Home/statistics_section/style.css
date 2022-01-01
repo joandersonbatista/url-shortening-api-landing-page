@@ -1,0 +1,105 @@
+.bg-gray {
+  background-color: hsl(0, 0%, 93%);
+  text-align: center;
+}
+
+.bg-gray h2 {
+  color: var(--Very-Dark-Violet);
+  padding-top: 10rem;
+}
+
+.bg-gray p {
+  color: var(--Grayish-Violet);
+  font-size: 1.6rem;
+}
+
+.bg-gray .main-content .statistics-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 7rem 0 9rem;
+  position: relative;
+  z-index: 1;
+  gap: 2rem;
+}
+
+.bg-gray .main-content .statistics-section::after {
+  content: "";
+  position: absolute;
+  height: 0.7rem;
+  width: 100%;
+  margin-top: 13.5rem;
+  background-color: var(--Cyan);
+  z-index: -1;
+}
+
+.bg-gray .main-content .statistics-section .card-content {
+  background-color: white;
+  padding: 0px 2.5rem 4rem;
+  text-align: start;
+  width: 100%;
+  max-width: 32rem;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.bg-gray .main-content .statistics-section .card-content p {
+  font-size: 1.4rem;
+}
+
+.bg-gray .main-content .statistics-section .card-content h3 {
+  margin: 7.5rem 0 1rem;
+}
+
+.bg-gray .main-content .statistics-section .card-content .card-icon {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -3.5rem;
+  background-color: var(--Dark-Violet);
+}
+
+.bg-gray .main-content .statistics-section .card-content .card-icon img {
+  height: 4rem;
+}
+
+.bg-gray .main-content .statistics-section .card-content:nth-child(2) {
+  margin-top: 4rem;
+}
+
+.bg-gray .main-content .statistics-section .card-content:nth-of-type(3) {
+  margin-top: 8rem;
+}
+
+@media (max-width: 600px) {
+  .bg-gray .main-content .statistics-section .card-content:nth-child(2) {
+    margin-top: 7rem;
+  }
+
+  .bg-gray .main-content .statistics-section .card-content:nth-child(3) {
+    margin-top: 7rem;
+  }
+
+  .bg-gray .main-content .statistics-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bg-gray .main-content .statistics-section::after {
+    height: 60%;
+    width: 0.7rem;
+  }
+
+  .bg-gray .main-content .statistics-section .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bg-gray .main-content .statistics-section .card-content .card-icon {
+    align-self: center;
+  }
+}

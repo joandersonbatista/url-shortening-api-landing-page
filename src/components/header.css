@@ -1,54 +1,117 @@
-.header {
+.main-content .header {
   display: flex;
   align-items: center;
-  height: 3.3rem;
+  height: 3.5rem;
   margin: 4rem auto 0rem;
+  position: relative;
 }
 
-.header img {
-  height: 90%;
+.main-content .header .menu-toggle {
+  display: none;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 5fr);
+  gap: 0.6rem;
+  height: 80%;
+  width: 3.5rem;
+  margin-left: auto;
 }
 
-.header nav {
+.main-content .header .menu-toggle .qual-foi {
+  background-color: var(--Gray);
+}
+
+.main-content .header img {
+  height: 3rem;
+}
+
+.main-content .header button {
+  padding: 0.9rem 1.7rem;
+}
+
+.main-content .header nav {
   display: flex;
-  height: 100%;
+  visibility: visible;
   width: 100%;
   justify-content: space-between;
 }
 
-.header nav ul {
-  display: flex;
-  list-style-type: none;
-  align-items: center;
-  height: 100%;
+.main-content .header nav .line {
+  display: none;
 }
 
-.header nav ul li {
+.main-content .header nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.main-content .header nav ul li {
   margin-left: 3rem;
 }
 
-.header nav ul li .button_nav {
-  font-size: 1.4rem;
+.main-content .header nav ul li .button_nav {
+  font-size: 1.3rem;
   font-weight: 700;
   display: block;
   color: var(--Grayish-Violet);
   transition: margin 0.1s ease-in-out;
 }
 
-.header nav ul li .button_nav:hover {
+.main-content .header nav ul li .button_nav:hover {
   color: black;
   margin-bottom: 0.5rem;
 }
 
-.header nav ul li .sign-button {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: white;
-  background-color: var(--Cyan);
-  padding: 0.8rem 2rem;
-  border-radius: 2rem;
-}
+@media (max-width: 500px) {
+  .main-content .header .drop-dow {
+    visibility: hidden;
+  }
 
-.header nav ul li .sign-button:hover {
-  background-color: hsl(180, 53%, 64%);
+  .main-content .header .drop-dow {
+    overflow: hidden;
+  }
+
+  .main-content .header nav {
+    flex-direction: column;
+    top: 6rem;
+    padding: 3rem 2.5rem;
+    z-index: 100;
+    position: absolute;
+    background-color: var(--Dark-Violet);
+    border-radius: 1rem;
+  }
+
+  .main-content .header .menu-toggle {
+    display: grid;
+  }
+
+  .main-content .header nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main-content .header nav ul li {
+    margin: 1.9rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-content .header nav ul li .button_nav {
+    font-size: 2rem;
+    color: rgb(233, 233, 233);
+  }
+
+  .main-content .header button {
+    padding: 1.7rem;
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .main-content .header nav .line {
+    display: block;
+    height: 0.1rem;
+    width: 100%;
+    margin: 0.5rem 0;
+    background-color: #7474745e;
+  }
 }

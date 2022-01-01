@@ -1,0 +1,82 @@
+.bg-very-dark-violet {
+  background-color: var(--Very-Dark-Violet);
+  width: 100%;
+}
+
+.bg-very-dark-violet .main-content .footer-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  padding: 7rem 0;
+}
+
+.bg-very-dark-violet .main-content .footer-section svg path {
+  fill: white;
+}
+
+.bg-very-dark-violet .main-content .footer-section .footer-links {
+  margin-top: 0.5rem;
+}
+
+.bg-very-dark-violet .main-content .footer-section .footer-links h4 {
+  margin-bottom: 2rem;
+}
+
+.bg-very-dark-violet .main-content .footer-section .footer-links ul li a {
+  font-size: 1.4rem;
+  color: var(--Grayish-Violet);
+  transition: ease-out 0.2s;
+}
+
+.bg-very-dark-violet .main-content .footer-section .footer-links ul li a:hover {
+  color: var(--Cyan);
+}
+
+.bg-very-dark-violet
+  .main-content
+  .footer-section
+  .footer-links
+  ul
+  li:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.bg-very-dark-violet .main-content .footer-section .media-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-very-dark-violet .main-content .footer-section .media-icons svg {
+  transition: ease-out 0.2s;
+  cursor: pointer;
+}
+
+.bg-very-dark-violet .main-content .footer-section .media-icons svg path {
+  transition: ease-out 0.2s;
+}
+
+.bg-very-dark-violet
+  .main-content
+  .footer-section
+  .media-icons
+  svg:hover
+  > path {
+  fill: var(--Cyan);
+}
+
+@media (max-width: 500px) {
+  .bg-very-dark-violet .main-content .footer-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .bg-very-dark-violet .main-content .footer-section .media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 5rem;
+  }
+
+  .bg-very-dark-violet .main-content .footer-section .footer-links {
+    margin-top: 4rem;
+  }
+}
