@@ -1,3 +1,48 @@
+.container-url {
+  width: 100%;
+  padding: 2rem 3rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin: 3rem 0 2rem;
+  border-radius: 1rem;
+}
+
+.container-url h5 {
+  max-width: 40rem;
+  word-wrap: break-word;
+}
+
+.container-url .short_link {
+  margin-left: auto;
+  color: var(--Cyan);
+}
+
+.container-url .short_link a {
+  color: var(--Cyan);
+}
+
+.container-url h5 a {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.842);
+}
+
+.container-url button {
+  height: 4rem;
+  margin-left: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  width: 10rem;
+  padding: 0;
+  transition: 1s;
+}
+
+.container-url .clicked {
+  background-color: var(--Dark-Violet);
+  transition: 1s;
+}
+
 .form-content {
   display: grid;
   align-items: center;
@@ -12,6 +57,15 @@
   gap: 1rem;
 }
 
+.form-content .err-message {
+  position: absolute;
+  left: 5rem;
+  bottom: 2.5rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgba(255, 104, 104, 0.911);
+}
+
 .form-content input {
   border-radius: 0.5rem;
   font-size: 1.7rem;
@@ -20,6 +74,14 @@
   transition: ease-out 0.3s;
   border: 0.3rem solid transparent;
   padding: 1.6rem 3.5rem;
+}
+
+.form-content .err-input {
+  border: 0.3rem solid rgba(255, 104, 104, 0.911);
+}
+
+.form-content .err-input::placeholder {
+  color: rgba(255, 104, 104, 0.911);
 }
 
 .form-content input:focus {
@@ -41,6 +103,27 @@
   padding: 0;
 }
 
+card-url-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+card-url-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+card-url-exit {
+  opacity: 1;
+}
+
+card-url-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
 @media (max-width: 600px) {
   .form-content {
     grid-template-columns: 1fr;
@@ -54,5 +137,37 @@
 
   .form-content button {
     padding: 1.6rem 3.5rem;
+  }
+
+  .container-url {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container-url button {
+    margin: 0;
+    align-self: center;
+    width: 100%;
+    height: 4.5rem;
+    font-size: 2rem;
+  }
+
+  .container-url h5 {
+    margin-bottom: 1rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .container-url .line {
+    content: "";
+    height: 0.1rem;
+    width: 100%;
+    background-color: var(--Gray);
+    margin: 0.6rem 0;
+  }
+
+  .container-url .short_link {
+    margin-left: 0;
+    margin-top: 1rem;
   }
 }

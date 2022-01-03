@@ -68,6 +68,16 @@ export default function FooterSection() {
           </div>
         </footer>
       </div>
+      <span>
+        feito com ❤️ por{" "}
+        <a
+          target="_blank"
+          href="https://github.com/joandersonbatista"
+          rel="noreferrer"
+        >
+          Joanderson Batista
+        </a>
+      </span>
     </div>
   );
 }

@@ -63,6 +63,18 @@
   fill: var(--Cyan);
 }
 
+.bg-very-dark-violet span {
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.bg-very-dark-violet span a {
+  color: var(--Cyan);
+}
+
 @media (max-width: 500px) {
   .bg-very-dark-violet .main-content .footer-section {
     grid-template-columns: 1fr;
