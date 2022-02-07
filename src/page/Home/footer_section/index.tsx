@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./style.css";
+
 import { ReactComponent as LogoSvg } from "../../../images/logo.svg";
 import { ReactComponent as IconFacebook } from "../../../images/icon-facebook.svg";
 import { ReactComponent as IconInstagram } from "../../../images/icon-instagram.svg";

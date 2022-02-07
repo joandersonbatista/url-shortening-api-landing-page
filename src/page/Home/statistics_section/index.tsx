@@ -11,6 +11,7 @@ export default function StatisticsSection() {
     <div className="bg-gray">
       <div className="main-content">
         <FormUrl />
+
         <h2>Advanced Statistics</h2>
         <p>
           Track how your links are performing across the web with our advanced

@@ -10,7 +10,7 @@ Application link here: https://gifted-wiles-599494.netlify.app/
   <img src="https://raw.githubusercontent.com/joandersonbatista/url-shortening-api-landing-page/main/design/simplescreenrecorder-2022-01-03_13.10.38.gif" />
 <h4>Mobile Design</h4>
   
-  <img height="500px" src="https://github.com/joandersonbatista/url-shortening-api-landing-page/blob/main/design/simplescreenrecorder-2022-01-03_13.13.17.gif" />
+  <img height="500px" src="https://raw.githubusercontent.com/joandersonbatista/url-shortening-api-landing-page/main/design/simplescreenrecorder-2022-01-03_13.13.17.gif" />
 </div>
 
 ## Available Scripts

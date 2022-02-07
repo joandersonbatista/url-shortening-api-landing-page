@@ -15,25 +15,30 @@ export default function FormUrl() {
   const [url, setUrl] = React.useState("");
   const [err, setErr] = React.useState(false);
   const [shortenedUrl, setShortenedUrl] = React.useState<IurlShortned[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   async function HandleClick(e: FormEvent) {
     e.preventDefault();
+    setLoading(true);
     if (url) {
       setErr(false);
       const newUrl = (await api.shortenLink(url)) as IurlShortned;
 
       if (shortenedUrl.length === 0) {
         setShortenedUrl([newUrl]);
+        setLoading(false);
         return;
       }
+      setLoading(false);
       setShortenedUrl((oldArray) => [...oldArray, newUrl]);
       return;
     }
+    setLoading(false);
     setErr(true);
   }
 
   function HandleButtonCopy(id: number) {
-    setButtonCopy({ id, copy: "copied" });
+    setButtonCopy({ id, copy: "copied!" });
     setTimeout(() => {
       setButtonCopy(initialValue);
     }, 2000);
@@ -52,6 +57,8 @@ export default function FormUrl() {
         <button type="submit">Shortens It!</button>
         {err && <span className="err-message">Please add a link</span>}
       </form>
+
+      {loading && <h3>Encurtando</h3>}
 
       {shortenedUrl
         .slice(0)
