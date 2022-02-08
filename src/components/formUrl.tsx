@@ -15,23 +15,30 @@ export default function FormUrl() {
   const [url, setUrl] = React.useState("");
   const [err, setErr] = React.useState(false);
   const [shortenedUrl, setShortenedUrl] = React.useState<IurlShortned[]>([]);
+  const [shortenedError, setShortnedError] = React.useState<string>("");
   const [loading, setLoading] = React.useState<boolean>(false);
 
   async function HandleClick(e: FormEvent) {
     e.preventDefault();
+    setShortnedError("");
     setLoading(true);
+
     if (url) {
       setErr(false);
-      const newUrl = (await api.shortenLink(url)) as IurlShortned;
+      const newUrl = await api.shortenLink(url);
+
+      if (typeof newUrl === "string") {
+        setLoading(false);
+        return setShortnedError("Erro ao encurtar");
+      }
 
       if (shortenedUrl.length === 0) {
         setShortenedUrl([newUrl]);
-        setLoading(false);
-        return;
+        return setLoading(false);
       }
+
       setLoading(false);
-      setShortenedUrl((oldArray) => [...oldArray, newUrl]);
-      return;
+      return setShortenedUrl((oldArray) => [...oldArray, newUrl]);
     }
     setLoading(false);
     setErr(true);
@@ -59,6 +66,7 @@ export default function FormUrl() {
       </form>
 
       {loading && <h3>Encurtando</h3>}
+      {!!shortenedError && <h3>{shortenedError}</h3>}
 
       {shortenedUrl
         .slice(0)

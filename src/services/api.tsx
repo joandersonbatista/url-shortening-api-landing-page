@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const url = "https://api.shrtco.de/v2/";
 
@@ -13,7 +13,7 @@ interface IurlShortned {
 }
 
 export default {
-  shortenLink: async (userUrl: string): Promise<IurlShortned | void> => {
+  shortenLink: async (userUrl: string): Promise<IurlShortned | string> => {
     try {
       const req = await axios.get(`${url}shorten`, {
         params: {
@@ -23,7 +23,7 @@ export default {
 
       return { id: getRandomArbitrary(), ...req.data.result };
     } catch (error) {
-      return console.log(`Deu ruim${error}`);
+      return (error as AxiosError).response?.data.error;
     }
   },
 };
